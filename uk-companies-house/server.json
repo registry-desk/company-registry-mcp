@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.registry-desk/uk-companies-house",
+  "description": "UK Companies House company data (company-level, change tracking) for AI agents.",
+  "version": "0.1.0",
+  "websiteUrl": "https://apify.com/tormanliikenne/uk-companies-house",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://tormanliikenne--uk-companies-house.apify.actor/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Apify API token as 'Bearer <apify-api-token>'. Each returned company is billed as one pay-per-event result on the caller's Apify account.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
