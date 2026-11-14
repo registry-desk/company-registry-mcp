@@ -1,6 +1,6 @@
 # Company registry MCP servers
 
-Registry entries for two hosted MCP servers that return company-level data from official open sources:
+Registry entries (no hosted endpoint since 0.2.0, batch Apify Actors) for two that return company-level data from official open sources:
 
 - `uk-companies-house`: UK Companies House free company data snapshot
 - `fr-sirene`: French Sirene register
