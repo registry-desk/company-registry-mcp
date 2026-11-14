@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.registry-desk/fr-sirene",
-  "description": "France Sirene company data (company-level, change tracking). Batch Apify Actor; no hosted MCP endpoint.",
+  "description": "France Sirene company data. Batch Apify Actor, no hosted MCP endpoint.",
   "version": "0.2.0",
   "websiteUrl": "https://apify.com/tormanliikenne/fr-sirene"
 }

@@ -1,0 +1,22 @@
+name: Deprecate 0.1.0
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deprecate:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+      - name: Authenticate to MCP Registry
+        run: ./mcp-publisher login github-oidc
+      - name: Deprecate version 0.1.0
+        run: |
+          for name in uk-companies-house fr-sirene; do
+            ./mcp-publisher status --status deprecated --message "Hosted MCP endpoint withdrawn. Use the Apify Actor at the website URL." "io.github.registry-desk/$name" 0.1.0
+          done
